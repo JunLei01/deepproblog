@@ -27,7 +27,7 @@ if pretrain is not None and pretrain > 0:
 net = Network(network, "mnist_net", batching=True)
 net.optimizer = torch.optim.Adam(network.parameters(), lr=1e-3)
 
-model = Model("models/addition.pl", [net])
+model = Model("/data/junlei/NPG/deepproblog/src/deepproblog/examples/MNIST/models/addition.pl", [net])
 if method == "exact":
     model.set_engine(ExactEngine(model), cache=True)
 elif method == "geometric_mean":
